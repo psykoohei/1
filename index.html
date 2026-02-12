@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="app">
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+    <main class="app glass">
       <header>
+        <p class="eyebrow">QUEUE-TIME BRAIN BOOST</p>
         <h1>連想スプリント</h1>
         <p class="subtitle">7〜30秒で終わる、待ち時間専用の連想ゲーム</p>
       </header>
@@ -29,7 +32,7 @@
         <div class="row"><span>残り時間</span><strong id="timeLeft">--</strong></div>
       </section>
 
-      <section class="prompt card">
+      <section class="prompt card pulse-card">
         <h2 id="promptTitle">「もう1本」でスタート</h2>
         <p id="promptBody">自動では次に進みません。列が動いたら中断してください。</p>
         <div id="choices" class="choices"></div>
@@ -38,8 +41,14 @@
 
       <section class="actions">
         <button id="startBtn" class="primary">もう1本</button>
+        <button id="submitBtn" class="accent hidden">回答する</button>
         <button id="stopBtn" class="danger">中断</button>
-        <button id="starBtn">★ あとで箱へ</button>
+        <button id="starBtn" class="ghost">★ あとで箱へ</button>
+      </section>
+
+      <section class="card result" id="resultPanel">
+        <h3>今回の結果</h3>
+        <p id="resultText">未回答</p>
       </section>
 
       <section class="card">
