@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>連想スプリント</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>連想スプリント</h1>
+        <p class="subtitle">7〜30秒で終わる、待ち時間専用の連想ゲーム</p>
+      </header>
+
+      <section class="controls card">
+        <label class="switch-row">
+          <input id="queueMode" type="checkbox" />
+          <span>列モード（入力型を封印）</span>
+        </label>
+        <label class="switch-row">
+          <input id="faceUp" type="checkbox" checked />
+          <span>30秒ごとに「顔上げ」通知</span>
+        </label>
+      </section>
+
+      <section class="status card">
+        <div class="row"><span>モード</span><strong id="modeName">未開始</strong></div>
+        <div class="row"><span>残り時間</span><strong id="timeLeft">--</strong></div>
+      </section>
+
+      <section class="prompt card">
+        <h2 id="promptTitle">「もう1本」でスタート</h2>
+        <p id="promptBody">自動では次に進みません。列が動いたら中断してください。</p>
+        <div id="choices" class="choices"></div>
+        <input id="quickInput" class="hidden" placeholder="1語だけ入力（任意）" maxlength="20" />
+      </section>
+
+      <section class="actions">
+        <button id="startBtn" class="primary">もう1本</button>
+        <button id="stopBtn" class="danger">中断</button>
+        <button id="starBtn">★ あとで箱へ</button>
+      </section>
+
+      <section class="card">
+        <h3>あとで箱</h3>
+        <ul id="laterBox"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
